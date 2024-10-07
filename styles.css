@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+
+}
+a:nth-child(4){
+    background-color: aliceblue;
+    padding: 5px;
+    color: black;
+    border-radius: 50px;
+}
+#navlogo{
+    width: 50px;
+height: 50px;
+}
+
+.navbar-container{
+    /* border:2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar{
+    border : 2px solid saddlebrown ;
+    width:35%;
+    display: flex;
+    background-color: #153643;
+    border-radius: 50px;
+    position: fixed;
+    top:2%;
+    z-index: 999;
+    
+}
+
+.left{
+    /* border : 2px solid rgb(233, 189, 157) ; */
+ 
+}
+.right{
+    /* border : 2px solid saddlebrown ; */
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap:20px;
+}
+
+.section-one{
+    font-size:3em ;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #153643;
+    background-image: url(images/background1.png);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+    font-family: monospace;
+ 
+    
+}
+
+.section-one-content{
+    /* position: absolute;
+    top:25%;
+    filter: brightness(150%);
+    /* z-index: 973; */
+    font-weight: 600; 
+}
+
+.section-two{
+    background-color: #051b22;
+    color: white;
+    
+
+}
+.section-two-cards{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    row-gap: 50px;
+    column-gap: 50px;
+}
+
+.section-two-card{
+    border: 2px solid rgb(129, 158, 225);
+    /* width:50px */
+
+}
