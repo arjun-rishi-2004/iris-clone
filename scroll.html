@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving Effect with Divs</title>
+  <style>
+    body, html {
+      height: 2000px; /* Long height to allow scrolling */
+      margin: 0;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Background buildings (parallax effect) */
+    .background-buildings {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300%; /* Extend the width to allow scrolling */
+      height: 100%; /* Full height of the viewport */
+      display: flex;
+      align-items: flex-end; /* Align buildings to bottom of the container */
+      background-color: white;
+      z-index: -1; /* Keep behind the vehicle */
+    }
+
+    /* Individual building blocks */
+    .building {
+      width: 150px;
+      height: 300px;
+      margin: 0 20px;
+      background-color: #808080;
+      border: 5px solid #606060;
+    }
+
+    /* Vehicle (stays fixed) */
+    .vehicle {
+      position: fixed;
+      bottom: 20px; /* Keeps the vehicle at the bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 100px;
+      background-color: #000000; /* Tomato color to represent the vehicle */
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Add shadow to give depth */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Dummy buildings for background -->
+  <div class="background-buildings">
+    <div class="building"></div>
+    <div class="building"></div>
+    <div class="building"></div>
+    <div class="building"></div>
+  </div>
+
+  <!-- Dummy vehicle -->
+  <div class="vehicle"></div>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+
+      // Move the background buildings slower for parallax effect
+      const buildings = document.querySelector('.background-buildings');
+      buildings.style.transform = `translateX(-${scrollPosition * 0.5}px)`; 
+    });
+  </script>
+
+</body>
+</html>

@@ -1,31 +1,42 @@
 * {
   color: aliceblue;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
 }
+
+body {
+  background-color: #123342;
+  max-width: 100vw;
+}
+
 header {
   display: flex;
   justify-content: center;
 }
-body {
-  background-color: #123342;
-}
+
 .navbar {
   border: 2px solid black;
   border-radius: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 50%;
   padding: 0;
-
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  top: 5%;
 }
+
 .sub-menu {
   display: flex;
   flex-direction: column;
@@ -52,19 +63,189 @@ body {
   display: flex;
 }
 
+.first-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(images/background1.png);
+  background-size: 100% 100%;
+}
+
+.content-one {
+  text-align: center;
+  font-size: 3em;
+}
+
+button {
+  background-color: #15fafa;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.second-section {
+  width: 80%;
+  margin: auto;
+}
+
+.brain {
+  width: 10%;
+  position: relative;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  background-color: #16f9ff;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.uses-cards {
+  display: flex;
+  flex-wrap: wrap; /* Ensures that cards wrap onto new lines */
+  gap: 20px; /* Adds space between the cards */
+  margin: auto;
+  width: 80%;
+  row-gap: 50px;
+}
+
+.card {
+  flex-basis: 45%; /* Each card takes about 45% of the container */
+  min-width: 200px; /* Minimum width to ensure responsiveness */
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card p{
+  text-align: center;
+  padding: 10%;
+  font-weight: bolder;
+
+}
+/* Initially hidden cards */
+.card {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* When the card is visible in the viewport */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Initially hidden section */
+.section-three {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 100px 0;
+  font-size: 0rem; /* Initial font size */
+  transition: font-size 0.1s ease-out; /* Smooth font size change */
+}
+
+
+/* 
+.trees{
+  display: flex;
+  align-items: center;
+  width: 200px;
+  gap: 20PX;
+}
+
+.chargers > div>img {
+  height: 100px;
+  width: 100px;
+ 
+
+}
+
+.chargers{
+display: flex;
+align-items: center;
+position: absolute;
+} */
+
+.background-setup{
+  display: flex;
+  position: relative;
+  z-index: 1;
+bottom: -30px;
+left: 0;
+}
+
+.bgprop,.bgprop img{
+height: 80px;
+width: 80px;
+}
+
+.plant{
+
+}
+.small-tree{
+
+}
+.big-tree{
+
+}
+.small-charger{
+
+}
+.big-charger{
+
+}
+
+.small-building{
+
+}
+
+.big-building{
+
+}
+
+.vehicles{
+  display: flex;
+  position: relative;
+  bottom:70px;
+  z-index: 99;
+  justify-content: space-around;
+  align-items: center;
+}
+.vehicles div{
+  height: 100px;
+  width: 200px;
+
+}
+
+div.road{
+  width:100%;
+  border: 3px solid white;
+  position: relative;
+  z-index: 100;
+  bottom: 70px;
+}
+
+.car{
+top:100px;
+}
+
 @media (max-width: 800px) {
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
+
   .hamburger-menu {
     display: block;
     padding-right: 30px;
@@ -72,12 +253,15 @@ body {
     order: 2;
     margin: 0;
   }
+
   .logo {
     order: 0;
   }
+
   .nav-links {
     display: none;
   }
+
   .nav-links.active {
     display: flex;
     flex-direction: column;
