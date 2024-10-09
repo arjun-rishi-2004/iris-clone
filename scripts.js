@@ -64,7 +64,7 @@ const container = document.querySelector('.background-setup');
 
 window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY; // Get the vertical scroll position
-  container.style.right =scrollPosition +"px"; // Move the div horizontally
+  container.style.left = - scrollPosition+1200 +"px"; // Move the div horizontally
 });
 
 // Attach the scroll event listener to the window
