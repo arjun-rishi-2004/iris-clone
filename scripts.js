@@ -1,11 +1,27 @@
 let hamburger_menu_icon = document.getElementsByClassName("hamburger-menu")[0];
 let navLinks = document.getElementsByClassName("nav-links")[0];
+let logo = document.getElementsByClassName("logo")[0]
+let navbar=document.getElementsByClassName("navbar")[0]
+let product_nav_button=document.getElementsByClassName("products-nav-button")[0]
+
+let sub_menu=document.getElementsByClassName("sub-menu")[0]
+
 
 hamburger_menu_icon.addEventListener('click', () => {
     navLinks.classList.toggle('active'); // Toggle the 'active' class
+  
+    console.log("clicked");
+});
+hamburger_menu_icon.addEventListener('click', () => {
+  logo.classList.toggle('active');
+    navbar.classList.toggle('active');  
     console.log("clicked");
 });
 
+product_nav_button.addEventListener('click',()=>{
+    console.log("hoverd")
+    sub_menu.classList.toggle("active")
+})
 
 // Function to check if the element is in the viewport
 function isElementInViewport(el) {
@@ -66,6 +82,14 @@ window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY; // Get the vertical scroll position
   container.style.left = - scrollPosition+1200 +"px"; // Move the div horizontally
 });
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
+
+
+
 
 // Attach the scroll event listener to the window
 window.addEventListener('scroll', adjustFontSizeOnScroll);

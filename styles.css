@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&display=swap');
+
 * {
-  color: aliceblue;
-  font-family: monospace;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+    color: rgb(255, 255, 255);
+    font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
 a {
   text-decoration: none;
@@ -37,13 +41,6 @@ header {
   top: 5%;
 }
 
-.sub-menu {
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  top: 10%;
-}
 
 .nav-links {
   display: flex;
@@ -58,17 +55,17 @@ header {
 .hamburger-menu {
   display: none;
 }
-
-.nav-links span:hover .sub-menu {
-  display: flex;
+.products-nav-button{
+  cursor: pointer;
 }
+
 
 .first-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: url(images/background1.png);
   background-size: 100% 100%;
 }
@@ -126,6 +123,7 @@ button {
   padding: 10%;
   font-weight: bolder;
 
+
 }
 /* Initially hidden cards */
 .card {
@@ -150,26 +148,7 @@ button {
 }
 
 
-/* 
-.trees{
-  display: flex;
-  align-items: center;
-  width: 200px;
-  gap: 20PX;
-}
 
-.chargers > div>img {
-  height: 100px;
-  width: 100px;
- 
-
-}
-
-.chargers{
-display: flex;
-align-items: center;
-position: absolute;
-} */
 
 .background-setup{
   display: flex;
@@ -184,29 +163,6 @@ height: 80px;
 width: 80px;
 }
 
-.plant{
-
-}
-.small-tree{
-
-}
-.big-tree{
-
-}
-.small-charger{
-
-}
-.big-charger{
-
-}
-
-.small-building{
-
-}
-
-.big-building{
-
-}
 
 .vehicles{
   display: flex;
@@ -369,31 +325,63 @@ footer{
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
-  }
+    transition: height 1s ease-in-out; /* Smooth transition */
+}
 
-  .hamburger-menu {
+.hamburger-menu {
     display: block;
     padding-right: 30px;
     cursor: pointer;
     order: 2;
     margin: 0;
-  }
+}
 
-  .logo {
+.logo {
     order: 0;
-  }
+    padding: 10px;
+}
 
-  .nav-links {
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
+.nav-links {
     flex-direction: column;
     gap: 10px;
-    order: 0;
     width: 100%;
-  }
+    height: 0;
+    opacity: 0;
+    visibility: hidden; /* Make it invisible but keep it in flow */
+    overflow: hidden; /* Prevent content from showing */
+    transition: height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+/* When hamburger is clicked, show nav links with animation */
+.navbar.active .nav-links {
+    height: 150px; /* Adjust based on how much space you need */
+    opacity: 1;
+    visibility: visible; /* Show the element */
+}
+
+/* Optional: Hover or active styles */
+.nav-links a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sub-menu{
+  display: none;
+  opacity: 0;
+  visibility: hidden; /* Make it invisible but keep it in flow */
+  overflow: hidden; /* Prevent content from showing */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+.sub-menu.active {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  height: 150px; /* Adjust based on how much space you need */
+  opacity: 1;
+  visibility: visible; /* Show the element */
+}
+  /* border: 2px solid black; */
+ 
 
   .uses-cards{
     align-items: center;
@@ -420,3 +408,6 @@ footer{
     justify-content: center;
   }
 }
+
+
+
