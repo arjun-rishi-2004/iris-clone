@@ -1,75 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Driving Effect with Divs</title>
-  <style>
-    body, html {
-      height: 2000px; /* Long height to allow scrolling */
-      margin: 0;
-      overflow-x: hidden; /* Prevent horizontal scroll */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Containers Moving Right to Left</title>
+    <style>
+        body {
+            margin: 0;
+            height: 200vh; /* Make the page tall enough to scroll */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            font-family: Arial, sans-serif;
+        }
 
-    /* Background buildings (parallax effect) */
-    .background-buildings {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300%; /* Extend the width to allow scrolling */
-      height: 100%; /* Full height of the viewport */
-      display: flex;
-      align-items: flex-end; /* Align buildings to bottom of the container */
-      background-color: white;
-      z-index: -1; /* Keep behind the vehicle */
-    }
+        .container-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 150px;
+            display: flex;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
 
-    /* Individual building blocks */
-    .building {
-      width: 150px;
-      height: 300px;
-      margin: 0 20px;
-      background-color: #808080;
-      border: 5px solid #606060;
-    }
+        .container {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            margin-left: 20px;
+            flex-shrink: 0;
+            transition: transform 0.5s linear;
+        }
 
-    /* Vehicle (stays fixed) */
-    .vehicle {
-      position: fixed;
-      bottom: 20px; /* Keeps the vehicle at the bottom */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 100px;
-      background-color: #000000; /* Tomato color to represent the vehicle */
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Add shadow to give depth */
-    }
-
-  </style>
+        /* Make the observer trigger small and at the bottom */
+        .observer-trigger {
+            width: 100%;
+            height: 5px;
+            background-color: transparent;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Dummy buildings for background -->
-  <div class="background-buildings">
-    <div class="building"></div>
-    <div class="building"></div>
-    <div class="building"></div>
-    <div class="building"></div>
-  </div>
+    <div class="container-wrapper" id="container-wrapper">
+        <!-- Initial set of containers -->
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+    </div>
 
-  <!-- Dummy vehicle -->
-  <div class="vehicle"></div>
+    <!-- Invisible observer trigger at the bottom of the page -->
+    <div class="observer-trigger" id="observer-trigger"></div>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
+    <script>
+        const containerWrapper = document.getElementById('container-wrapper');
+        const observerTrigger = document.getElementById('observer-trigger');
 
-      // Move the background buildings slower for parallax effect
-      const buildings = document.querySelector('.background-buildings');
-      buildings.style.left = `translateX(-${scrollPosition * 0.5}px)`; 
-    });
-  </script>
+        let containerIndex = 0;
+
+        // Function to move all containers from right to left
+        const moveContainers = () => {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach((container, index) => {
+                container.style.transform = `translateX(-${150 * (containerIndex)}px)`; // Adjust position based on scroll
+            });
+        };
+
+        // Function to create and append new containers
+        const addNewContainer = () => {
+            const newContainer = document.createElement('div');
+            newContainer.classList.add('container');
+            newContainer.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; // Random color
+            containerWrapper.appendChild(newContainer);
+        };
+
+        // Intersection observer callback
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Append new container when scrolled
+                    containerIndex++;
+                    addNewContainer();
+                    moveContainers(); // Move containers to the left
+                }
+            });
+        };
+
+        // Intersection observer setup
+        const observer = new IntersectionObserver(observerCallback, {
+            root: null, // viewport
+            threshold: 1.0 // Trigger when the observer trigger is fully visible
+        });
+
+        // Observe the trigger element
+        observer.observe(observerTrigger);
+
+        // Scroll event listener for continuous movement
+        window.addEventListener('scroll', () => {
+            moveContainers(); // Move the containers continuously on scroll
+        });
+    </script>
 
 </body>
 </html>

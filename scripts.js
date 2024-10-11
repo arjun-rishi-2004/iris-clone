@@ -73,12 +73,12 @@ function adjustFontSizeOnScroll() {
 }
 
 
-const container = document.querySelector('.background-setup');
+// const container = document.querySelector('.background-setup');
 
-window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY; // Get the vertical scroll position
-  container.style.left = - scrollPosition+1200 +"px"; // Move the div horizontally
-});
+// window.addEventListener('scroll', () => {
+//   const scrollPosition = window.scrollY-1300; // Get the vertical scroll position
+//   container.style.transform = `translateX(-${scrollPosition}px)` // Move the div horizontally
+// });
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -91,4 +91,9 @@ function toggleMenu() {
 // Attach the scroll event listener to the window
 window.addEventListener('scroll', adjustFontSizeOnScroll);
 
+const container = document.querySelector('.background-setup');
 
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY-1200; // Get the vertical scroll position
+  container.style.transform = `translateX(-${scrollPosition*0.5}px)` // Move the div horizontally
+});
