@@ -7,22 +7,19 @@ let product_nav_button=document.getElementsByClassName("products-nav-button")[0]
 let sub_menu=document.getElementsByClassName("sub-menu")[0]
 
 
+let second_row = document.getElementsByClassName("second-row")[0];
+
+// For the hamburger menu
 hamburger_menu_icon.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Toggle the 'active' class
-  
-    console.log("clicked");
-});
-hamburger_menu_icon.addEventListener('click', () => {
-  logo.classList.toggle('active');
-    navbar.classList.toggle('active');  
-    console.log("clicked");
+    second_row.classList.toggle('active');  // Toggle visibility of second row
+    console.log("Hamburger menu clicked");
 });
 
-product_nav_button.addEventListener('click',()=>{
-    console.log("hoverd")
-    sub_menu.classList.toggle("active")
-})
-
+// For the product submenu
+product_nav_button.addEventListener('click', () => {
+    sub_menu.classList.toggle("active");  // Toggle submenu visibility
+    console.log("Products menu clicked");
+});
 // Function to check if the element is in the viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();

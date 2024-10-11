@@ -10,30 +10,35 @@
     <header>
         <nav class="navbar">
 
-            <div class="logo">
-                <a href="#"><img src="images/navlogo1.svg" alt="Logo"></a>
+            <div class="first-row">
+                <div class="logo">
+                    <a href="#"><img src="images/navlogo1.svg" alt="Logo"></a>
+                </div>
+                <div class="hamburger-menu">☰</div>
             </div>
-            <div class="nav-links">
+           
+<div class="second-row">
+    <div class="nav-links">
              
-                <a href="">Home</a>
-                <span>
-                    <span class="products-nav-button">Products</span>
-                    <span class="sub-menu">
-                        <a href="">Network</a>
-                        <a href="">Sense</a>
-                        <a href="">Echo</a>
-                    </span>
-                </span>
-                <a href="">About Us</a>
-                <a href="">Request Demo</a>
-            </div>
-       
-        <div class="hamburger-menu">☰</div>
+        <a href="#">Home</a>
+        <span class="product-nav-section">
+            <span class="products-nav-button">Products</span>
+            <span class="sub-menu">
+                <a href="network.html">Network</a>
+                <a href="sense.html">Sense</a>
+                <a href="">Echo</a>
+            </span>
+        </span>
+        <a href="about.html">About Us</a>
+        <a href="#contact-form">Request Demo</a>
+    </div>
+
+</div>
+           
 
     </nav>
 </header>
-            
-        
+   
         
     
 
@@ -326,7 +331,7 @@
         </div>
 
         <div class="right">
-            <form action="" class="contact-form">
+            <form action="" class="contact-form" id="contact-form">
                 <input type="text" placeholder="Full name">
                 <input type="email" placeholder="Email ID">
                 <input type="text" placeholder="Contact number (Optional)">
@@ -368,5 +373,6 @@
 </footer>
 <!-- <p>lorem500</p> -->
     <script src="scripts.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

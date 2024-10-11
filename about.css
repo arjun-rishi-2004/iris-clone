@@ -3,73 +3,90 @@
 * {
     color: rgb(255, 255, 255);
     font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  body {
-    background-color: #02070a;
-    max-width: 100vw;
-    overflow-x: hidden;
-    
-  }
- 
-  
-  header {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navbar {
-    border: 2px solid black;
-    border-radius: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    padding: 0;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: fixed;
-    top: 5%;
-    z-index: 99;
-  }
-  .logo {
-    width: 80px;
-  }
-  
-  .hamburger-menu {
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #123342;
+  max-width: 100vw;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar */
+
+.navbar {
+  border: 2px solid black;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  top: 5%;
+  z-index: 1;
+}
+
+.hamburger-menu {
     display: none;
-  }
-  
-  .nav-links span:hover .sub-menu {
-    display: flex;
-  }
-  
-  .sub-menu {
-    display: flex;
-    flex-direction: column;
-    display: none;
-    position: absolute;
-    top: 10%;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 50px;
+    cursor: pointer;
     padding: 10px;
-  }
-  
+}
+
+.second-row {
+    display: flex;
+    align-items: center;
+    height: auto;
+    max-height: none; /* Allow auto height on desktop */
+    transition: none; /* No transition on desktop */
+    opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.products-nav-button {
+  cursor: pointer;
+}
+
+.sub-menu {
+
+    display: none;
+    opacity: 0;
+    transition: none; /* No transition on desktop */
+    flex-direction: column;
+}
+
+.sub-menu.active {
+  position: absolute;
+    display: flex;
+    opacity: 1;
+    max-height: none; /* Allow auto height on desktop */
+}
 
   /* Nabvar code above need to change */
 
@@ -220,36 +237,36 @@ font-style: normal;
     
   
   }
-  .footer-one{
+   .footer-one{
     margin-top: 100px;
   }
-  .first-row{
+  footer .first-row{
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
     padding: 50px;
   
   }
-  .first-row .third-column img{
+  footer .first-row .third-column img{
     width: 100px;
   }
-  .footer-two{
+  footer .footer-two{
     margin-top: 50px;
   }
   
-  .first-row .first-column,.first-row .second-column{
+  footer .first-row .first-column,.first-row .second-column{
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  .second-row{
+  footer .second-row{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
   
-  .second-row .logos img{
+  footer .second-row .logos img{
     width: 50px;
   }
   
@@ -261,6 +278,58 @@ font-style: normal;
 
 
   @media (max-width: 800px) {
+    .navbar {
+      flex-direction: column;
+      width: 80%;
+  }
+  
+  .first-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+  
+  .second-row {
+      align-items: normal;
+      align-self: flex-start;
+      padding-left: 10px;
+      max-height: 0; /* Start collapsed */
+      overflow: hidden; /* Hide content initially */
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+  }
+  
+  .second-row.active {
+      max-height: 1000px; /* Allow expansion */
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .hamburger-menu {
+      display: block;
+  }
+  
+  .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .sub-menu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+  }
+  
+  .sub-menu.active {
+      max-height: 1000px; /* Allow expansion */
+      opacity: 1;
+      visibility: visible;
+      position: static;
+  }
     .people-card:nth-child(2) figure{
         order:0;
      }

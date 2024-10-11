@@ -3,12 +3,12 @@
 * {
     color: rgb(255, 255, 255);
     font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
+}
 
 a {
   text-decoration: none;
@@ -30,7 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 80%;
   padding: 0;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -39,80 +39,103 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   top: 5%;
+  z-index: 999;
 }
 
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.second-row {
+    display: flex;
+    align-items: center;
+    height: auto;
+    max-height: none; /* Allow auto height on desktop */
+    transition: none; /* No transition on desktop */
+    opacity: 1;
+}
 
 .nav-links {
   display: flex;
-  /* gap: 2%; */
   padding: 10px;
+  gap: 20px;
 }
 
 .logo {
   width: 80px;
 }
 
-.hamburger-menu {
-  display: none;
-}
-.products-nav-button{
+.products-nav-button {
   cursor: pointer;
 }
 
-@media (max-width: 800px) {
-.navbar{
-    flex-direction: column;
-}
-
-.first-row{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.second-row {
-align-self: flex-start;
-padding-left:10px ;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transition: height 0.5s ease, opacity 0.5s ease-in-out;
-}
-
-.second-row.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-   .hamburger-menu{
-    cursor: pointer;
-    display: block;
-    padding: 10px;
-   }
-
-   .nav-links{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-   }
-
 .sub-menu {
-    height: 0;
-    overflow: hidden;  
-    opacity: 0; 
-    visibility: hidden;
-    transition: height 0.5s ease, opacity 0.5s ease-in-out;
-    display: flex;
+    display: none;
+    opacity: 0;
+    transition: none; /* No transition on desktop */
     flex-direction: column;
+
 }
 
 .sub-menu.active {
-    opacity: 1; 
-    visibility: visible;  
+    position: absolute;
+    display: flex;
+    opacity: 1;
+    max-height: none; /* Allow auto height on desktop */
 }
 
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        width: 80%;
+    }
 
-   
-}  
+    .first-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .second-row {
+        align-items: normal;
+        align-self: flex-start;
+        padding-left: 10px;
+        max-height: 0; /* Start collapsed */
+        overflow: hidden; /* Hide content initially */
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+    }
+
+    .second-row.active {
+        max-height: 1000px; /* Allow expansion */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sub-menu {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+    }
+
+    .sub-menu.active {
+        max-height: 1000px; /* Allow expansion */
+        opacity: 1;
+        visibility: visible;
+    }
+}
