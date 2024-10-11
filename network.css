@@ -41,7 +41,7 @@ body {
     align-items: center;
     width: 80%;
     padding: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -97,11 +97,25 @@ body {
   
 
 /* background*/
+.section-two p{
+  line-height: 2em;
+
+}
 .background img{
     width: 100vw;
     height: 90vh;
   
+  
 }
+
+.benefits-card p{
+  line-height: 2em;
+
+}
+.network-color,.benefits-card h2{
+  background: linear-gradient(90deg, rgb(131, 218, 111) 0%, rgb(23, 250, 255) 48.6486%, rgb(83, 171, 248) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;}
 
 .foreground{
     position: relative;
@@ -135,7 +149,7 @@ body {
 
 
 .section-two{
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
@@ -148,11 +162,12 @@ body {
 }
 
 .partner-card{
-    min-width: 29%;
+    min-width: 15%;
     display: flex;
-    margin: 5% 0;
+    margin:10px 0;
     justify-content: space-between;
-    width: 29%;
+    width: 211px;
+    height: 91px;
     background: rgba(255, 255, 255, 0);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(0px);
@@ -170,7 +185,7 @@ body {
     width:100%;
 
     height: 7em;
-    padding: 20px;
+    padding: 40px;
     position: relative;
     z-index: -1;
  }
@@ -188,10 +203,17 @@ body {
  }
 
  .feature-list{
-    width: 80%;
-    margin: auto;
+
+    width: 90%;
+    margin:50px auto;
  }
 
+ .feature-list p 
+{
+  font-weight: 500;
+  line-height: 2em;
+  font-size: larger;
+ }
 
  
 .feature-icon,.benefits-icon {
@@ -199,7 +221,7 @@ body {
     position: relative;
     left: 50%;
     transform:translate(-50%,-50%);
-    background-color: #72d68d;
+    background:linear-gradient(135deg, rgb(72, 151, 84) 11%, rgb(131, 218, 111) 51.3514%, rgb(83, 171, 248) 100%);
     border-radius: 50px;
     padding: 5px;
   }
@@ -214,10 +236,8 @@ body {
   }
   
   .feature-card,.benefits-card {
-    flex-basis: 45%; /* Each card takes about 45% of the container */
-    min-width: 200px; /* Minimum width to ensure responsiveness */
-    min-height: 200px;
-    height: 100%;
+    min-width: 125px;
+    height: min-content;
     background: rgba(255, 255, 255, 0);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(0px);
@@ -233,29 +253,31 @@ body {
     text-align: center;
     padding: 12%;
     font-weight: bolder;
-  
+    padding-top: 0;
   
   }
-  /* Initially hidden cards */
-  /* .feature-card {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  } */
-  
-  /* When the card is visible in the viewport */
-  .feature-card.show {
-    opacity: 1;
-    transform: translateY(0);
+
+  .feature-card{
+    width: 30%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
-.cms{
-    width: 80%;
+
+  
+ 
+  .cms{
+    width: 90%;
     margin: 10px auto;
+    margin-bottom: 20px;
 }
-  .card {
-    flex-basis: 45%; /* Each card takes about 45% of the container */
-    min-width: 200px; /* Minimum width to ensure responsiveness */
-    min-height: 100px;
+  .cms-card {
+    padding: 10px;
+    min-width: 200px; 
     height: 200px;
     background: rgba(255, 255, 255, 0);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -264,13 +286,25 @@ body {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
-  
+  .cms-card  p:last-child{
+    margin-top: 10px;
+    line-height: 2em;
+  }
+
+.cms-card p:not(:last-child){
+font-size: 20px;
+}
+
+.heading{
+  font-size: 20px;
+}
 .clients{
-    width: 80%;
-    margin:auto;
+    width: 90%;
+    margin:20px auto;
 }
   .client-images img{
-   width: 30%;
+   width: 200px;
+   margin: 10px;
   }
 
   .client-images{
@@ -279,11 +313,49 @@ body {
   }
 
   .benefits{
-    width: 80%;
+    width: 95%;
     margin: auto;
   }
 
+.benefits-card{
+    padding: 40px;
+    width: 30%;
+    /* min-width: 47%; */
+    min-width: 350px;
+    height:520px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  
+}
 
+
+.feature-icon {
+  width: 20%;
+  position: relative;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg, rgb(72, 151, 84) 11%, rgb(131, 218, 111) 51.3514%, rgb(83, 171, 248) 100%);
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.benefits-icon {
+  bottom: 10%;
+  width: 20%;
+  position: relative;
+  left: 50%;
+  background:linear-gradient(135deg, rgb(72, 151, 84) 11%, rgb(131, 218, 111) 51.3514%, rgb(83, 171, 248) 100%);
+  border-radius: 50px;
+  /* padding: 5px; */
+}
+
+.benefits-card:hover,.feature-card:hover,.partner-card:hover{
+  transform: scale(1.05);
+}
 
   @media (max-width: 800px) {
     .navbar {
