@@ -29,6 +29,7 @@ header {
 /* Navbar */
 
 .navbar {
+
   border: 2px solid black;
   border-radius: 50px;
   display: flex;
@@ -36,7 +37,7 @@ header {
   align-items: center;
   width: 80%;
   padding: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.51);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -86,8 +87,17 @@ header {
 }
 
 .sub-menu.active {
+  border-radius:10px ;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.51);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border:2px solid rgba(255, 255, 255, 0.18);
+  top: 70px;
   position: absolute;
     display: flex;
+    gap: 5px;
     opacity: 1;
     max-height: none; /* Allow auto height on desktop */
 }
@@ -418,6 +428,13 @@ footer .second-row .logos img{
     opacity: 1;
     visibility: visible;
     position: static;
+    background: transparent;
+  box-shadow:none;
+  backdrop-filter:unset;
+  -webkit-backdrop-filter: blur(4px);
+  border:0;
+
+   
 }
 
   .uses-cards{
