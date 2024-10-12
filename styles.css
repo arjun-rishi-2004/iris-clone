@@ -15,7 +15,7 @@ a {
 }
 
 body {
-  background-color: #123342;
+  background-color:rgb(5, 17, 24);
   max-width: 100vw;
   width: 100%;
   min-width: 375px
@@ -97,11 +97,11 @@ header {
 
 .second-section {
   width: 80%;
-  margin: auto;
+  margin:50px auto;
 }
 
 .brain {
-  width: 10%;
+  width: 50px;
   position: relative;
   left: 50%;
   transform:translate(-50%,-50%);
@@ -117,12 +117,13 @@ header {
   margin: auto;
   width: 80%;
   row-gap: 50px;
+  margin-top: 50px;
 }
 
 .card {
   flex-basis: 45%; /* Each card takes about 45% of the container */
   min-width: 200px; /* Minimum width to ensure responsiveness */
-  min-height: 100px;
+  min-height: fit-content;
   height: 300px;
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -191,7 +192,7 @@ width: 90px;
 }
 .vehicles div img{
   height: 100px;
-  width: 200px;
+  width: 80%;
 
 }
 
@@ -204,7 +205,6 @@ div.road{
 }
 
 .car{
-/* top:100px; */
 position: relative;
 top: 25px;
 }
@@ -243,6 +243,14 @@ top: 25px;
 padding: 2em;
 }
 
+.know-more-button{
+  border-radius: 50px;
+  padding: 5px;
+
+  cursor: pointer;
+  background:  linear-gradient(108deg, rgb(12, 255, 210) 0%, rgb(23, 250, 255) 48.1982%, rgb(0, 191, 255) 100%) rgba(0, 0, 0, 0);
+  border-color: rgba(5, 249, 254, 0.4);
+}
 .footer-one{
   width: 80%;
   margin: auto;
@@ -436,16 +444,10 @@ footer .second-row .logos img{
     align-items: center;
     justify-content: center;
   }
-  .vehicles div{
-    height: 100px;
-    width: 100px;
-  
-  }
   .right{
     width: 100%
   }
-
-
+  
   
 }
 
@@ -490,7 +492,10 @@ footer .second-row .logos img{
 
 .content-one {
   font-size: 2em;  
+  font-weight: bold;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+
   opacity: 0;
   transform: scale(0); 
   transition: opacity 2s ease-in, transform 2s ease; 
@@ -505,8 +510,10 @@ footer .second-row .logos img{
 .first-section .background img{
   min-width: none;
   width: 100%;
-  height: 90vh;
-  
+  height: 100vh;
+  /* opacity: 0.5; */
+  object-fit: cover;
+
 
 }
 
@@ -548,5 +555,7 @@ width: 100%;
   
 }
 
-
+p,h2,h3,h4{
+  line-height: 2em;
+}
 
