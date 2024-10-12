@@ -148,7 +148,7 @@ font-style: normal;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px; 
-    
+    margin-top: 50px;
  
   }
   
@@ -275,6 +275,7 @@ font-style: normal;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px; 
+  
     
  
   }
@@ -314,4 +315,11 @@ font-style: normal;
     }
   }
   
+  .section-two,.feature-list,.benefits{
+    margin-top: 50px;
+  }
   
+  
+  .section-two {
+    line-height: 2em;
+  }
