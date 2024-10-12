@@ -3,21 +3,19 @@ let navLinks = document.getElementsByClassName("nav-links")[0];
 let logo = document.getElementsByClassName("logo")[0]
 let navbar=document.getElementsByClassName("navbar")[0]
 let product_nav_button=document.getElementsByClassName("products-nav-button")[0]
-
+let contentOne=document.getElementsByClassName("content-one")[0];
 let sub_menu=document.getElementsByClassName("sub-menu")[0]
 
 
 let second_row = document.getElementsByClassName("second-row")[0];
 
-// For the hamburger menu
 hamburger_menu_icon.addEventListener('click', () => {
-    second_row.classList.toggle('active');  // Toggle visibility of second row
+    second_row.classList.toggle('active');  
     console.log("Hamburger menu clicked");
 });
 
-// For the product submenu
 product_nav_button.addEventListener('click', () => {
-    sub_menu.classList.toggle("active");  // Toggle submenu visibility
+    sub_menu.classList.toggle("active");  
     console.log("Products menu clicked");
 });
 // Function to check if the element is in the viewport
@@ -33,6 +31,9 @@ function isElementInViewport(el) {
 
 // Function to add 'show' class to cards when they enter the viewport
 function handleScroll() {
+    if (isElementInViewport(contentOne)){
+        contentOne.classList.add('show')
+    }
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         if (isElementInViewport(card)) {
@@ -41,10 +42,10 @@ function handleScroll() {
     });
 }
 
+
 // Listen for scroll events and trigger the function
 window.addEventListener('scroll', handleScroll);
 
-// Initial check in case some elements are already in view on load
 document.addEventListener('DOMContentLoaded', handleScroll);
 // Select the section-three element
 const sectionThree = document.querySelector('.section-three');
