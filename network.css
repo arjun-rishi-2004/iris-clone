@@ -131,7 +131,24 @@ width: 100%;
     gap: 50px;
     justify-content: center;
   }
+
+  .benefits-cards-container {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   
+  }
+
+  @media (max-width: 1000px) {
+    .benefits-cards-container {
+    grid-template-columns: 1fr 1fr ;
+    }
+  }
+  @media (max-width: 800px) {
+    .benefits-cards-container {
+    grid-template-columns: 1fr ;
+    }
+  }
   .feature-card {
     flex-basis: 250px;
     min-width: 150px;
@@ -261,9 +278,10 @@ width: 100%;
     .benefits-card{
       padding: 40px;
       /* width: 30%; */
-      width:400px;
+      /* width:400px; */
       /* min-width: 350px; */
-      height:fit-content;
+      /* height:500px; */
+      min-height: fit-content;
       background: rgba(255, 255, 255, 0);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       backdrop-filter: blur(0px);
