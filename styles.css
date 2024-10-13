@@ -268,7 +268,7 @@ padding: 2em;
 .product-card:hover .know-more-button{
 opacity: 1;}
 .footer-one{
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-around;
@@ -327,7 +327,7 @@ footer{
 }
 footer .first-row{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 50px;
   padding: 50px;
 
@@ -365,7 +365,10 @@ footer .second-row .logos img{
   width: 30%;
 }
 
-
+.footer-two .first-row{
+  display:flex;
+  justify-content: space-between;
+}
 
 
 
