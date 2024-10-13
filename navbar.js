@@ -9,6 +9,7 @@ hamburger_menu_icon.addEventListener('click', () => {
     console.log("Hamburger menu clicked");
 });
 
+
 // For the product submenu
 product_nav_button.addEventListener('click', () => {
     sub_menu.classList.toggle("active");  // Toggle submenu visibility
