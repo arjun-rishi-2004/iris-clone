@@ -9,16 +9,6 @@ let sub_menu=document.getElementsByClassName("sub-menu")[0]
 
 let second_row = document.getElementsByClassName("second-row")[0];
 
-hamburger_menu_icon.addEventListener('click', () => {
-    second_row.classList.toggle('active');  
-    console.log("Hamburger menu clicked");
-});
-
-product_nav_button.addEventListener('mouseover', () => {
-    sub_menu.classList.toggle("active");  
-    console.log("Products menu clicked");
-});
-
 
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -89,4 +79,18 @@ const container = document.querySelector('.background-setup');
 window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY-1200; 
   container.style.transform = `translateX(-${scrollPosition*0.5}px)`
+});
+
+
+// For the hamburger menu
+hamburger_menu_icon.addEventListener('click', () => {
+    second_row.classList.toggle('active');  // Toggle visibility of second row
+    console.log("Hamburger menu clicked");
+});
+
+
+// For the product submenu
+product_nav_button.addEventListener('click', () => {
+    sub_menu.classList.toggle("active");  // Toggle submenu visibility
+    console.log("Products menu clicked");
 });
