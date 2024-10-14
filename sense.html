@@ -43,18 +43,29 @@
 </header>
    
 
-
+<div class="wrapper">
     <section class="section-one">
         <div class="background"><img src="images/sense-bg.png" alt="bg"></div>
-    <div class="foreground">
-        <div class="content">
-            <img src="images/sense.png" alt="">
-            <p>An energy business leader's only data tool for all their decision needs
-            </p>
-               <button class="request-demo">Request-demo</button> 
+        <div class="foreground">
+            <div class="content">
+                <img src="images/sense.png" alt="">
+                <p>An energy business leader's only data tool for all their decision needs</p>
+                <button class="request-demo">Request-demo</button>
+            </div>
         </div>
-    </div>
     </section>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const background = document.querySelector('.section-one .background');
+    const scrollPosition = window.pageYOffset;
+
+    // Adjust background position for parallax effect
+    background.style.transform = `translateY(-${scrollPosition * 0.3}px)`;
+  });
+</script>
+
 
     <section class="section-two">
         <p>Product Description        </p>
