@@ -5,7 +5,7 @@ let navbar=document.getElementsByClassName("navbar")[0]
 let product_nav_button=document.getElementsByClassName("products-nav-button")[0]
 let contentOne=document.getElementsByClassName("content-one")[0];
 let sub_menu=document.getElementsByClassName("sub-menu")[0]
-
+let downarrow=document.getElementsByClassName("downarrow")[0]
 
 let second_row = document.getElementsByClassName("second-row")[0];
 
@@ -93,4 +93,7 @@ hamburger_menu_icon.addEventListener('click', () => {
 product_nav_button.addEventListener('click', () => {
     sub_menu.classList.toggle("active");  // Toggle submenu visibility
     console.log("Products menu clicked");
+    // downarrow.style.transform="rotate(180deg)"
+    downarrow.classList.toggle("active")
+
 });

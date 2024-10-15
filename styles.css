@@ -36,7 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 60%;
   padding: 0;
   background: rgba(0, 0, 0, 0.51);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -45,7 +45,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   top: 5%;
-  z-index: 999;
+  z-index: 3;
 }
 
 .hamburger-menu {
@@ -70,6 +70,11 @@ header {
   align-items: center;
 
 }
+
+.nav-links a:not(:last-child):hover, .products-nav-button:hover {
+  color: aqua;
+}
+
 
 .logo {
   width: 80px;
@@ -399,13 +404,37 @@ footer .second-row .logos img{
 
 .request-demo-nav{
   border: 2px solid rgba(5, 249, 254, 0.4);
+  background:  rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+}
+.arrow{
+  display: none;
+}
+.downarrow{
+  width: 20px;
+  transition: transform 0.3s ease-in;
+
+}
+
+.downarrow.active{
+  transform: rotate(180deg);
+}
+.request-demo-nav:hover{
+  border: 2px solid rgba(5, 249, 254, 0.4);
   background:  linear-gradient(108deg, rgb(12, 255, 210) 0%, rgb(23, 250, 255) 48.1982%, rgb(0, 191, 255) 100%) rgba(0, 0, 0, 0);
   border-radius: 20px;
   padding: 10px;
   
 }
-
-
+.request-demo-nav:hover .arrow{
+display: inline;
+}
+.productandarrow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
   
 /* background*/
 
@@ -523,10 +552,13 @@ p,h2,h3,h4{
   width: 100%; 
   text-align: center;
   padding: 10px;
-  background-color: #f0f0f0; 
+  background:  linear-gradient(108deg, rgb(12, 255, 210) 0%, rgb(23, 250, 255) 48.1982%, rgb(0, 191, 255) 100%) rgba(0, 0, 0, 0);
   display: block; 
 }
 
+.arrow{
+  display: inline;
+}
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -588,6 +620,6 @@ p,h2,h3,h4{
   
 }
 
-.product-card:hover,.uses-cards:hover{
+.product-card:hover,.card:hover{
 transform: scale(1.1);
 }
