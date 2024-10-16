@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&display=swap');
+
+{ color: rgb(255, 255, 255); font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-style: normal; padding: 0; margin: 0; box-sizing: border-box; }
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(5, 17, 24);
+  width: 100%;
+  min-width: 400px;
+  height: 100%;
+  overflow-x: hidden;
+}
 
   /* Nabvar code above need to change */
-
 
 .section-one{
     height: 100vh;
@@ -36,7 +49,7 @@ font-style: normal;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 2em;
     align-items: center;
- 
+
  } 
 
  figure img{
@@ -63,20 +76,21 @@ font-style: normal;
     transform: scale(1.1);
 }
 
-
- /* Parallax */
-/* 
+input[type="button"]{
+    background:
+}
+ /* Parallax /
+/ 
  .wrapper{
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
-    /* height: 100vh; */
-/* } */
- /* .section-one{
+    /* height: 100vh; /
+/ } /
+ / .section-one{
     position: relative;
     transform-style: preserve-3d;
-    
 
  } */
 
@@ -84,58 +98,56 @@ font-style: normal;
     transform: translateZ(-10px) scale(2);
  } */
 
-
  /* waves */
 
 /* .waves img{
     position: absolute;
     z-index: -1;
     left: -10px;
-    
+
 } */
 
  /* Footer */
-
 
   @media (max-width: 800px) {
     .navbar {
       flex-direction: column;
       width: 80%;
   }
-  
+
   .first-row {
       display: flex;
       justify-content: space-between;
       width: 100%;
   }
-  
+
   .second-row {
       align-items: normal;
       align-self: flex-start;
       padding-left: 10px;
-      max-height: 0; /* Start collapsed */
-      overflow: hidden; /* Hide content initially */
+      max-height: 0; /* Start collapsed /
+      overflow: hidden; / Hide content initially */
       opacity: 0;
       visibility: hidden;
       transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
   }
-  
+
   .second-row.active {
       max-height: 1000px; /* Allow expansion */
       opacity: 1;
       visibility: visible;
   }
-  
+
   .hamburger-menu {
       display: block;
   }
-  
+
   .nav-links {
       display: flex;
       flex-direction: column;
       gap: 10px;
   }
-  
+
   .sub-menu {
       max-height: 0;
       overflow: hidden;
@@ -143,7 +155,7 @@ font-style: normal;
       visibility: hidden;
       transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
   }
-  
+
   .sub-menu.active {
       max-height: 1000px; /* Allow expansion */
       opacity: 1;
@@ -157,3 +169,63 @@ font-style: normal;
         flex-wrap: wrap;
      }
   }
+
+
+  @media (max-width: 480px) {
+    html, body {
+        min-width: 100%;
+    }
+  }
+/* Parallax container */
+.parallax-container {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Background (slow-moving) layer */
+.parallax-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(2);
+}
+
+.content {
+    position: relative;
+    / background: white; */
+    transform: translateZ(0);
+    height: 100vh;
+}
+
+/* Existing styles with modifications */
+.section-one {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.3em;
+    text-align: center;
+    gap: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.waves img {
+    /* width: 100%; */
+    height: auto;
+    object-fit: cover;
+}
+
+.section-two {
+    width: 90%;
+    margin: auto;
+    margin-top: 90vh;
+    padding: 5% 0;
+
+}

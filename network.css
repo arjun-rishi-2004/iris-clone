@@ -319,4 +319,7 @@ object-fit: cover;
     transform: scale(1.05);
   }
   
-  
+  input[type="button"]{
+    background:linear-gradient(135deg, rgb(72, 151, 84) 11%, rgb(131, 218, 111) 51.3514%, rgb(83, 171, 248) 100%);
+    
+}

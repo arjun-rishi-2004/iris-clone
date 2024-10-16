@@ -176,3 +176,7 @@ width: 100%;
   .section-two {
     line-height: 2em;
   }
+
+  input[type="button"]{
+    background:linear-gradient(135deg, rgb(83, 62, 239) 11%, rgb(83, 171, 248) 51.3514%, rgb(118, 69, 216) 100%);
+  }

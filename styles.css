@@ -17,8 +17,9 @@ a {
 body {
   background-color: rgb(5, 17, 24);
   width: 100%;
-  min-width: 400px;
+  height: 100%;
   overflow-x: hidden;
+  min-width: 400px; 
 }
 
 
@@ -631,4 +632,9 @@ p,h2,h3,h4{
 
 .product-card:hover,.card:hover{
 transform: scale(1.05);
+}
+
+input[type="button"]{
+  color: white;
+  background:linear-gradient(to right, rgb(12, 255, 210), rgb(23, 250, 255), rgb(0, 191, 255))
 }

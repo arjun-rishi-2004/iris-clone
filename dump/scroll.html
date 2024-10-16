@@ -4,31 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en', includedLanguages: 'en,fr,de,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
 </head>
 <body>
-    
-    <p>Good Morning</p>
-    <h3>transalte this</h3>
-    <script>
-        var myHeaders = new Headers();
-myHeaders.append("apikey", "QyJqMO875FFksmaouSTea5BMb0zigbfn");
-let bodyContent="Good Morning";
 
-var raw = "{body}";
-
-var requestOptions = {
-  method: 'POST',
-  redirect: 'follow',
-  headers: myHeaders,
-  body: raw,
-
- 
-};
-
-fetch("https://api.apilayer.com/language_translation/translate?target=es&source=en", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-    </script>
 </body>
 </html>
