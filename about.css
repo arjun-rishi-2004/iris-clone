@@ -65,34 +65,34 @@ font-style: normal;
 
 
  /* Parallax */
-
+/* 
  .wrapper{
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
     /* height: 100vh; */
- }
- .section-one{
+ } */
+ /* .section-one{
     position: relative;
     transform-style: preserve-3d;
     
 
- }
+ } */
 
- .section-one{
+ /* .section-one{
     transform: translateZ(-10px) scale(2);
- }
+ } */
 
 
  /* waves */
 
-.waves img{
+/* .waves img{
     position: absolute;
     z-index: -1;
     left: -10px;
     
-}
+} */
 
  /* Footer */
 

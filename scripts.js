@@ -97,3 +97,10 @@ product_nav_button.addEventListener('click', () => {
     downarrow.classList.toggle("active")
 
 });
+
+  window.addEventListener('scroll', function() {
+    const background = document.querySelector('.section-one .background');
+    const scrollPosition = window.scrollY;
+
+    background.style.transform = `translateY(-${scrollPosition * 0.3}px)`;
+  });

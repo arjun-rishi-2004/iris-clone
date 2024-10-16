@@ -60,14 +60,7 @@
     </section>
 </div>
 
-<script>
-  window.addEventListener('scroll', function() {
-    const background = document.querySelector('.section-one .background');
-    const scrollPosition = window.pageYOffset;
 
-    background.style.transform = `translateY(-${scrollPosition * 0.3}px)`;
-  });
-</script>
 
 
     <section class="section-two">
@@ -123,7 +116,7 @@
 </section>
 
 
-<footer>
+<footer id="contact-form">
     <div class="footer-one">
         <div class="left">
             <div class="location">
@@ -181,7 +174,7 @@
         </div>
 
         <div class="right">
-            <form action="" class="contact-form" id="contact-form">
+            <form action="" class="contact-form" >
                 <input type="text" placeholder="Full name">
                 <input type="email" placeholder="Email ID">
                 <input type="text" placeholder="Contact number (Optional)">

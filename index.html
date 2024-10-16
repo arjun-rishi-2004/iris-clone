@@ -57,7 +57,17 @@
         </div>
           </section>
 
-
+          <section class="waves">
+            <img src="assets/wavetop.svg" alt="">
+        </section>
+        <script>
+            window.addEventListener('scroll', function() {
+              const background = document.querySelector('.waves');
+              const scrollPosition = window.pageYOffset;
+          
+              background.style.transform = `translateY(-${scrollPosition * 0.5}px)`;
+            });
+          </script>
     <section class="second-section">
         <h3>The Platform  </h3>
         <br>
@@ -235,7 +245,7 @@
         <div class="network product-card">
             <img src="images/network.png" alt="">
             <p>Intelligent EV charging network management software to simplify extensive networks</p>
-            <button class="know-more-button">Know More</button>
+            <button class="know-more-button"> <a href="network.html"> Know More</a></button>
         </div>
         <div class="sense product-card">
             <img src="images/sense.png" alt="">
@@ -245,13 +255,13 @@
         <div class="echo product-card">
             <img src="images/echo.png" alt="">
             <p>Virtual Smart-Charger to test your CSMS quickly, effortlessly & at a lower cost across various scenarios</p>
-            <button class="know-more-button">Know More</button>
+            <button class="know-more-button"><a href="echo.html"> Know More</a></button>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="footer-one">
+<footer id="contact-form">
+    <div class="footer-one" >
         <div class="left">
             <div class="location">
                 <h3>We are located at</h3>
@@ -308,7 +318,7 @@
         </div>
 
         <div class="right">
-            <form action="" class="contact-form" id="contact-form">
+            <form action="" class="contact-form" >
                 <input type="text" placeholder="Full name">
                 <input type="email" placeholder="Email ID">
                 <input type="text" placeholder="Contact number (Optional)">
