@@ -17,7 +17,7 @@ a {
 body {
   background-color: rgb(5, 17, 24);
   width: 100%;
-  min-width: fit-content;
+  min-width: 400px;
   overflow-x: hidden;
 }
 
@@ -573,6 +573,7 @@ p,h2,h3,h4{
   gap: 10px;
   align-items: stretch; 
 }
+
 
 
 .sub-menu {

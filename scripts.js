@@ -65,7 +65,6 @@ function adjustFontSizeOnScroll() {
 
 
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
   }
 
@@ -83,7 +82,15 @@ window.addEventListener('scroll', () => {
 
 
 hamburger_menu_icon.addEventListener('click', () => {
+    hamburger_menu_icon.classList.toggle("open")
+    if (hamburger_menu_icon.textContent === '☰') {
+        hamburger_menu_icon.textContent = '✖';  // Show close icon
+    } else {
+        hamburger_menu_icon.textContent = '☰';  // Show hamburger icon
+    }
+
     second_row.classList.toggle('active'); 
+
     console.log("Hamburger menu clicked");
 });
 
@@ -102,3 +109,6 @@ product_nav_button.addEventListener('click', () => {
 
     background.style.transform = `translateY(-${scrollPosition * 0.3}px)`;
   });
+
+
+  
