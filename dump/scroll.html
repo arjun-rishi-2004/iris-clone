@@ -3,107 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrolling Containers Moving Right to Left</title>
-    <style>
-        body {
-            margin: 0;
-            height: 200vh; /* Make the page tall enough to scroll */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-            font-family: Arial, sans-serif;
-        }
-
-        .container-wrapper {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            height: 150px;
-            display: flex;
-            justify-content: flex-end;
-            overflow: hidden;
-        }
-
-        .container {
-            width: 150px;
-            height: 150px;
-            background-color: lightblue;
-            margin-left: 20px;
-            flex-shrink: 0;
-            transition: transform 0.5s linear;
-        }
-
-        /* Make the observer trigger small and at the bottom */
-        .observer-trigger {
-            width: 100%;
-            height: 5px;
-            background-color: transparent;
-            position: absolute;
-            bottom: 0;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-    <div class="container-wrapper" id="container-wrapper">
-        <!-- Initial set of containers -->
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-    </div>
-
-    <!-- Invisible observer trigger at the bottom of the page -->
-    <div class="observer-trigger" id="observer-trigger"></div>
-
+    
+    <p>Good Morning</p>
+    <h3>transalte this</h3>
     <script>
-        const containerWrapper = document.getElementById('container-wrapper');
-        const observerTrigger = document.getElementById('observer-trigger');
+        var myHeaders = new Headers();
+myHeaders.append("apikey", "QyJqMO875FFksmaouSTea5BMb0zigbfn");
+let bodyContent="Good Morning";
 
-        let containerIndex = 0;
+var raw = "{body}";
 
-        // Function to move all containers from right to left
-        const moveContainers = () => {
-            const containers = document.querySelectorAll('.container');
-            containers.forEach((container, index) => {
-                container.style.transform = `translateX(-${150 * (containerIndex)}px)`; // Adjust position based on scroll
-            });
-        };
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow',
+  headers: myHeaders,
+  body: raw,
 
-        // Function to create and append new containers
-        const addNewContainer = () => {
-            const newContainer = document.createElement('div');
-            newContainer.classList.add('container');
-            newContainer.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; // Random color
-            containerWrapper.appendChild(newContainer);
-        };
+ 
+};
 
-        // Intersection observer callback
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Append new container when scrolled
-                    containerIndex++;
-                    addNewContainer();
-                    moveContainers(); // Move containers to the left
-                }
-            });
-        };
-
-        // Intersection observer setup
-        const observer = new IntersectionObserver(observerCallback, {
-            root: null, // viewport
-            threshold: 1.0 // Trigger when the observer trigger is fully visible
-        });
-
-        // Observe the trigger element
-        observer.observe(observerTrigger);
-
-        // Scroll event listener for continuous movement
-        window.addEventListener('scroll', () => {
-            moveContainers(); // Move the containers continuously on scroll
-        });
+fetch("https://api.apilayer.com/language_translation/translate?target=es&source=en", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
     </script>
-
 </body>
 </html>

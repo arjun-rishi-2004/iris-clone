@@ -82,16 +82,14 @@ window.addEventListener('scroll', () => {
 });
 
 
-// For the hamburger menu
 hamburger_menu_icon.addEventListener('click', () => {
-    second_row.classList.toggle('active');  // Toggle visibility of second row
+    second_row.classList.toggle('active'); 
     console.log("Hamburger menu clicked");
 });
 
 
-// For the product submenu
 product_nav_button.addEventListener('click', () => {
-    sub_menu.classList.toggle("active");  // Toggle submenu visibility
+    sub_menu.classList.toggle("active"); 
     console.log("Products menu clicked");
     // downarrow.style.transform="rotate(180deg)"
     downarrow.classList.toggle("active")
