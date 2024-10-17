@@ -145,10 +145,10 @@ header {
 
 .card {
   flex-basis: 45%; 
-  min-width: 200px; 
-  min-height: 300px;;
+  min-width: 300px; 
+  min-height: fit-content;
 
-  height: fit-content;
+  height:250px;
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -185,7 +185,9 @@ header {
   transition: font-size 0.1s ease-out; /* Smooth font size change */
 }
 
-
+.know-more-button{
+  display: block;
+}
 
 .background-setup{
   display: flex;
@@ -597,6 +599,11 @@ p,h2,h3,h4{
   border:0;
 
    
+}
+
+
+.know-more-button{
+  opacity: 1;
 }
 
   .uses-cards{
